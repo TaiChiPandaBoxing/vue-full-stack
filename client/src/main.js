@@ -9,9 +9,17 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import App from './App'
 import router from './router'
 import filters from './filters'
-import { Button, Row, Col, Swipe, SwipeItem, Lazyload, List } from 'vant'
+import { Button, Row, Col, Swipe, SwipeItem, Lazyload, List, Field, NavBar } from 'vant'
 
-Vue.use(Button).use(Row).use(Col).use(Swipe).use(SwipeItem).use(Lazyload).use(List)
+Vue.use(Button)
+  .use(Row)
+  .use(Col)
+  .use(Swipe)
+  .use(SwipeItem)
+  .use(Lazyload)
+  .use(List)
+  .use(Field)
+  .use(NavBar)
 Vue.use(VueAwesomeSwiper)
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])

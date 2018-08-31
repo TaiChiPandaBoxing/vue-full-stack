@@ -4,15 +4,15 @@ import router from '../router'
 const http = axios.create({
   timeout: 5000,
   responseType: 'json',
-  withCredentials: true, // 是否允许带cookie这些
+  // withCredentials: true, // 是否允许带cookie这些
   headers: {
-    'X-Requested-With': 'XMLHttpRequest',
+    // 'X-Requested-With': 'XMLHttpRequest',
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
   }
 })
 
 if (process.env.NODE_ENV === 'development') {
-  http.defaults.baseURL = 'https://www.easy-mock.com/mock/5b45725960e42a620c3fc378/api'
+  http.defaults.baseURL = 'http://localhost:8080' // 'https://www.easy-mock.com/mock/5b45725960e42a620c3fc378/api'
 } else if (process.env.NODE_ENV === 'debug') {
   http.defaults.baseURL = 'https://www.easy-mock.com/mock/5b45725960e42a620c3fc378/api'
 } else if (process.env.NODE_ENV === 'production') {
@@ -58,6 +58,7 @@ export function httpGet (url, params = {}) {
   })
 }
 export function httpPost (url, data = {}) {
+  console.log(data)
   return new Promise((resolve, reject) => {
     http.post(url, data).then(response => {
       resolve(response)
