@@ -11,13 +11,13 @@ const http = axios.create({
   }
 })
 
-if (process.env.NODE_ENV === 'development') {
-  http.defaults.baseURL = 'http://localhost:8080' // 'https://www.easy-mock.com/mock/5b45725960e42a620c3fc378/api'
-} else if (process.env.NODE_ENV === 'debug') {
-  http.defaults.baseURL = 'https://www.easy-mock.com/mock/5b45725960e42a620c3fc378/api'
-} else if (process.env.NODE_ENV === 'production') {
-  http.defaults.baseURL = 'https://www.easy-mock.com/mock/5b45725960e42a620c3fc378/api'
-}
+// if (process.env.NODE_ENV === 'development') {
+//   http.defaults.baseURL = 'http://localhost:8080' // 'https://www.easy-mock.com/mock/5b45725960e42a620c3fc378/api'
+// } else if (process.env.NODE_ENV === 'debug') {
+//   http.defaults.baseURL = 'https://www.easy-mock.com/mock/5b45725960e42a620c3fc378/api'
+// } else if (process.env.NODE_ENV === 'production') {
+//   http.defaults.baseURL = 'https://www.easy-mock.com/mock/5b45725960e42a620c3fc378/api'
+// }
 
 // 请求时的拦截
 http.interceptors.request.use(function (config) {

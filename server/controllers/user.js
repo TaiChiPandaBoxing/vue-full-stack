@@ -1,7 +1,9 @@
 const User = require('../models/user.js')
 
-exports.signup = function (req, res) {
-  console.log(1234)
+exports.signup = function (req, res, next) {
   const _user = req.body.user
-  console.log(_user)
+  res.send({
+    data: 1234
+  })
+  next()
 }
